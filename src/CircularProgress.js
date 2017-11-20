@@ -15,6 +15,9 @@ export default class CircularProgress extends React.Component {
   }
 
   extractFill(fill) {
+    if(typeof fill !== 'number'){
+      fill = 0;
+    }
     if (fill < 0.01) {
       return 0;
     } else if (fill > 100) {
