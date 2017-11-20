@@ -15,9 +15,11 @@ export default class CircularProgress extends React.Component {
   }
 
   extractFill(fill) {
-    if(typeof fill !== 'number'){
-      fill = 0;
-    }
+      if(isNaN(fill)){
+          fill = 0;
+      } else {
+          fill = parseFloat(fill);
+      }
     if (fill < 0.01) {
       return 0;
     } else if (fill > 100) {
